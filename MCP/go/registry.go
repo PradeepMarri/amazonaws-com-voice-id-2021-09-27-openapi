@@ -1,0 +1,69 @@
+package main
+
+import (
+	"github.com/amazon-voice-id/mcp-server/config"
+	"github.com/amazon-voice-id/mcp-server/models"
+	tools_x_amz_target_voiceid_deletedomain "github.com/amazon-voice-id/mcp-server/tools/x_amz_target_voiceid_deletedomain"
+	tools_x_amz_target_voiceid_listspeakerenrollmentjobs "github.com/amazon-voice-id/mcp-server/tools/x_amz_target_voiceid_listspeakerenrollmentjobs"
+	tools_x_amz_target_voiceid_deletefraudster "github.com/amazon-voice-id/mcp-server/tools/x_amz_target_voiceid_deletefraudster"
+	tools_x_amz_target_voiceid_listspeakers "github.com/amazon-voice-id/mcp-server/tools/x_amz_target_voiceid_listspeakers"
+	tools_x_amz_target_voiceid_associatefraudster "github.com/amazon-voice-id/mcp-server/tools/x_amz_target_voiceid_associatefraudster"
+	tools_x_amz_target_voiceid_describedomain "github.com/amazon-voice-id/mcp-server/tools/x_amz_target_voiceid_describedomain"
+	tools_x_amz_target_voiceid_describespeaker "github.com/amazon-voice-id/mcp-server/tools/x_amz_target_voiceid_describespeaker"
+	tools_x_amz_target_voiceid_untagresource "github.com/amazon-voice-id/mcp-server/tools/x_amz_target_voiceid_untagresource"
+	tools_x_amz_target_voiceid_createwatchlist "github.com/amazon-voice-id/mcp-server/tools/x_amz_target_voiceid_createwatchlist"
+	tools_x_amz_target_voiceid_listfraudsters "github.com/amazon-voice-id/mcp-server/tools/x_amz_target_voiceid_listfraudsters"
+	tools_x_amz_target_voiceid_describefraudster "github.com/amazon-voice-id/mcp-server/tools/x_amz_target_voiceid_describefraudster"
+	tools_x_amz_target_voiceid_createdomain "github.com/amazon-voice-id/mcp-server/tools/x_amz_target_voiceid_createdomain"
+	tools_x_amz_target_voiceid_optoutspeaker "github.com/amazon-voice-id/mcp-server/tools/x_amz_target_voiceid_optoutspeaker"
+	tools_x_amz_target_voiceid_deletespeaker "github.com/amazon-voice-id/mcp-server/tools/x_amz_target_voiceid_deletespeaker"
+	tools_x_amz_target_voiceid_startspeakerenrollmentjob "github.com/amazon-voice-id/mcp-server/tools/x_amz_target_voiceid_startspeakerenrollmentjob"
+	tools_x_amz_target_voiceid_describefraudsterregistrationjob "github.com/amazon-voice-id/mcp-server/tools/x_amz_target_voiceid_describefraudsterregistrationjob"
+	tools_x_amz_target_voiceid_listtagsforresource "github.com/amazon-voice-id/mcp-server/tools/x_amz_target_voiceid_listtagsforresource"
+	tools_x_amz_target_voiceid_disassociatefraudster "github.com/amazon-voice-id/mcp-server/tools/x_amz_target_voiceid_disassociatefraudster"
+	tools_x_amz_target_voiceid_describewatchlist "github.com/amazon-voice-id/mcp-server/tools/x_amz_target_voiceid_describewatchlist"
+	tools_x_amz_target_voiceid_listwatchlists "github.com/amazon-voice-id/mcp-server/tools/x_amz_target_voiceid_listwatchlists"
+	tools_x_amz_target_voiceid_updatewatchlist "github.com/amazon-voice-id/mcp-server/tools/x_amz_target_voiceid_updatewatchlist"
+	tools_x_amz_target_voiceid_deletewatchlist "github.com/amazon-voice-id/mcp-server/tools/x_amz_target_voiceid_deletewatchlist"
+	tools_x_amz_target_voiceid_updatedomain "github.com/amazon-voice-id/mcp-server/tools/x_amz_target_voiceid_updatedomain"
+	tools_x_amz_target_voiceid_describespeakerenrollmentjob "github.com/amazon-voice-id/mcp-server/tools/x_amz_target_voiceid_describespeakerenrollmentjob"
+	tools_x_amz_target_voiceid_evaluatesession "github.com/amazon-voice-id/mcp-server/tools/x_amz_target_voiceid_evaluatesession"
+	tools_x_amz_target_voiceid_startfraudsterregistrationjob "github.com/amazon-voice-id/mcp-server/tools/x_amz_target_voiceid_startfraudsterregistrationjob"
+	tools_x_amz_target_voiceid_listfraudsterregistrationjobs "github.com/amazon-voice-id/mcp-server/tools/x_amz_target_voiceid_listfraudsterregistrationjobs"
+	tools_x_amz_target_voiceid_listdomains "github.com/amazon-voice-id/mcp-server/tools/x_amz_target_voiceid_listdomains"
+	tools_x_amz_target_voiceid_tagresource "github.com/amazon-voice-id/mcp-server/tools/x_amz_target_voiceid_tagresource"
+)
+
+func GetAll(cfg *config.APIConfig) []models.Tool {
+	return []models.Tool{
+		tools_x_amz_target_voiceid_deletedomain.CreateDeletedomainTool(cfg),
+		tools_x_amz_target_voiceid_listspeakerenrollmentjobs.CreateListspeakerenrollmentjobsTool(cfg),
+		tools_x_amz_target_voiceid_deletefraudster.CreateDeletefraudsterTool(cfg),
+		tools_x_amz_target_voiceid_listspeakers.CreateListspeakersTool(cfg),
+		tools_x_amz_target_voiceid_associatefraudster.CreateAssociatefraudsterTool(cfg),
+		tools_x_amz_target_voiceid_describedomain.CreateDescribedomainTool(cfg),
+		tools_x_amz_target_voiceid_describespeaker.CreateDescribespeakerTool(cfg),
+		tools_x_amz_target_voiceid_untagresource.CreateUntagresourceTool(cfg),
+		tools_x_amz_target_voiceid_createwatchlist.CreateCreatewatchlistTool(cfg),
+		tools_x_amz_target_voiceid_listfraudsters.CreateListfraudstersTool(cfg),
+		tools_x_amz_target_voiceid_describefraudster.CreateDescribefraudsterTool(cfg),
+		tools_x_amz_target_voiceid_createdomain.CreateCreatedomainTool(cfg),
+		tools_x_amz_target_voiceid_optoutspeaker.CreateOptoutspeakerTool(cfg),
+		tools_x_amz_target_voiceid_deletespeaker.CreateDeletespeakerTool(cfg),
+		tools_x_amz_target_voiceid_startspeakerenrollmentjob.CreateStartspeakerenrollmentjobTool(cfg),
+		tools_x_amz_target_voiceid_describefraudsterregistrationjob.CreateDescribefraudsterregistrationjobTool(cfg),
+		tools_x_amz_target_voiceid_listtagsforresource.CreateListtagsforresourceTool(cfg),
+		tools_x_amz_target_voiceid_disassociatefraudster.CreateDisassociatefraudsterTool(cfg),
+		tools_x_amz_target_voiceid_describewatchlist.CreateDescribewatchlistTool(cfg),
+		tools_x_amz_target_voiceid_listwatchlists.CreateListwatchlistsTool(cfg),
+		tools_x_amz_target_voiceid_updatewatchlist.CreateUpdatewatchlistTool(cfg),
+		tools_x_amz_target_voiceid_deletewatchlist.CreateDeletewatchlistTool(cfg),
+		tools_x_amz_target_voiceid_updatedomain.CreateUpdatedomainTool(cfg),
+		tools_x_amz_target_voiceid_describespeakerenrollmentjob.CreateDescribespeakerenrollmentjobTool(cfg),
+		tools_x_amz_target_voiceid_evaluatesession.CreateEvaluatesessionTool(cfg),
+		tools_x_amz_target_voiceid_startfraudsterregistrationjob.CreateStartfraudsterregistrationjobTool(cfg),
+		tools_x_amz_target_voiceid_listfraudsterregistrationjobs.CreateListfraudsterregistrationjobsTool(cfg),
+		tools_x_amz_target_voiceid_listdomains.CreateListdomainsTool(cfg),
+		tools_x_amz_target_voiceid_tagresource.CreateTagresourceTool(cfg),
+	}
+}
